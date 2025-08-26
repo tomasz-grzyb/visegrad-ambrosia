@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragweed Invasion Research - Visegrad Fund Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #27ae60);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .visegrad-logo {
+            margin: 1rem 0;
+        }
+        
+        .visegrad-logo img {
+            max-width: 200px;
+            height: auto;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        nav {
+            background: #34495e;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #2c3e50;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 0.5rem;
+        }
+        
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .info-item {
+            text-align: center;
+        }
+        
+        .info-item strong {
+            display: block;
+            color: #27ae60;
+            font-size: 1.1rem;
+        }
+        
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .partner-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .partner-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .partner-card .country {
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .partner-link {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .partner-link:hover {
+            background: #219a52;
+        }
+        
+        .timeline {
+            background: linear-gradient(to right, #e8f5e8, #f0f9f0);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: #27ae60;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #219a52;
+        }
+        
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .method-item {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .method-item h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: #27ae60;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .language-switch select {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            background: white;
+            color: #2c3e50;
+        }
+        
+        .highlight-box {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .alert-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .partner-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-switch">
+            <select onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="pl">Polski</option>
+            </select>
+        </div>
+        
+        <div class="container">
+            <div class="header-content">
+                <h1 id="main-title">Searching for Ways to Understand and Reduce the Ragweed Invasion in the V4+ Region</h1>
+                <p id="subtitle">Molecular insights into Ambrosia artemisiifolia invasiveness across Central Europe</p>
+                
+                <div class="visegrad-logo">
+                    <a href="https://www.visegradfund.org" target="_blank">
+                        <img src="https://via.placeholder.com/200x100/ffffff/2c3e50?text=Visegrad+Fund+Logo" alt="Visegrad Fund Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Project Overview</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#impact">Expected Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2>Project Overview</h2>
+            
+            <div class="project-info-grid">
+                <div class="info-item">
+                    <strong>Duration</strong>
+                    June 2026 - November 2027
+                </div>
+                <div class="info-item">
+                    <strong>Budget</strong>
+                    €15,000
+                </div>
+                <div class="info-item">
+                    <strong>Countries</strong>
+                    Poland, Slovakia, Hungary, Bosnia and Herzegovina
+                </div>
+            </div>
+            
+            <div class="alert-box">
+                <strong>The Problem:</strong> Common ragweed (Ambrosia artemisiifolia) is one of Central Europe's most destructive invasive plants, causing up to €7.4 billion in European healthcare costs and reducing crop yields by up to 50% in affected areas.
+            </div>
+
+            <h3>Project Description</h3>
+            <p>
+                Our international research team will investigate how fungi (mycobiome) and bioactive compounds (metabolites) contribute to the extraordinary invasiveness of common ragweed across Central Europe. Using cutting-edge molecular and chemical analyses, we will sample 12 strategic locations across the V4+ region to identify patterns that could reveal new biocontrol strategies.
+            </p>
+            
+            <div class="highlight-box">
+                <h4>Why This Research Matters</h4>
+                <p>Ragweed affects up to 40% of people in heavily invaded areas, with models predicting sensitization could increase from 33 to 77 million Europeans by 2041-60. In Hungary alone, ragweed consumes approximately 1% of GDP through combined healthcare and agricultural losses. This project aims to understand the molecular mechanisms behind ragweed's success to develop sustainable control methods.</p>
+            </div>
+
+            <h3>Key Research Questions</h3>
+            <ul>
+                <li>Which fungi are consistently associated with ragweed across its invasion range?</li>
+                <li>What chemical compounds give ragweed its competitive advantage?</li>
+                <li>Can we identify natural compounds that limit ragweed's own growth (autotoxicity)?</li>
+                <li>How do these patterns vary across the invasion gradient from epicenter to expanding frontiers?</li>
+            </ul>
+        </section>
+
+        <section id="partners">
+            <h2>Research Consortium</h2>
+            <p>Our transnational team brings together expertise from universities across the Visegrad+ region:</p>
+            
+            <div class="partner-grid">
+                <div class="partner-card">
+                    <h3>Lodz University of Technology</h3>
+                    <div class="country">Poland - Lead Partner</div>
+                    <p><strong>Department:</strong> Environmental Biotechnology, Faculty of Biotechnology and Food Sciences</p>
+                    <a href="https://www.p.lodz.pl/" class="partner-link" target="_blank">Visit University</a>
+                </div>
+                
+                <div class="partner-card">
+                    <h3>Comenius University in Bratislava</h3>
+                    <div class="country">Slovakia</div>
+                    <p><strong>Department:</strong> Department of Botany, Faculty of Natural Sciences</p>
+                    <a href="https://uniba.sk/" class="partner-link" target="_blank">Visit University</a>
+                </div>
+                
+                <div class="partner-card">
+                    <h3>Hungarian University of Agriculture and Life Sciences</h3>
+                    <div class="country">Hungary</div>
+                    <p><strong>Department:</strong> Department of Agronomy, Institute of Crop Production Sciences</p>
+                    <a href="https://www.uni-mate.hu/" class="partner-link" target="_blank">Visit University</a>
+                </div>
+                
+                <div class="partner-card">
+                    <h3>University of Sarajevo</h3>
+                    <div class="country">Bosnia and Herzegovina</div>
+                    <p><strong>Department:</strong> Faculty of Agriculture and Food Sciences</p>
+                    <a href="https://www.unsa.ba/" class="partner-link" target="_blank">Visit University</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology">
+            <h2>Research Methodology</h2>
+            
+            <div class="methodology-grid">
+                <div class="method-item">
+                    <h4>Mycobiome Analysis</h4>
+                    <p>Comprehensive molecular characterization of ragweed's fungal communities (both surface and internal) using DNA sequencing and qPCR quantification across all sampling sites.</p>
+                </div>
+                
+                <div class="method-item">
+                    <h4>Chemical Profiling</h4>
+                    <p>Advanced GC×GC-MS analysis to identify and quantify terpenoids and phenolic acids from various ragweed tissues, creating complete metabolomic profiles.</p>
+                </div>
+                
+                <div class="method-item">
+                    <h4>Autotoxicity Testing</h4>
+                    <p>Germination assays using ragweed extracts to identify compounds that may limit the plant's own growth, potentially revealing natural bioherbicide candidates.</p>
+                </div>
+                
+                <div class="method-item">
+                    <h4>Strategic Sampling</h4>
+                    <p>12 locations across 4 countries: 6 sites in the Pannonian Basin invasion epicenter (Hungary/Slovakia) and 6 from expanding frontiers (Poland/Bosnia).</p>
+                </div>
+            </div>
+
+            <h3>Innovation Elements</h3>
+            <p>This project pioneers "invasive biotechnology" - a systematic approach to understanding invasion mechanisms at the molecular level. Key innovations include:</p>
+            <ul>
+                <li><strong>Comprehensive mycobiome analysis:</strong> First study to examine ragweed's complete fungal community using modern molecular techniques</li>
+                <li><strong>Invasion gradient approach:</strong> Sampling from both epicenter and expanding frontiers reveals universal vs. location-specific patterns</li>
+                <li><strong>Integrated chemical ecology:</strong> Combining metabolomics with biological activity testing to identify specific compounds responsible for competitive advantage</li>
+                <li><strong>Absolute quantification:</strong> Moving beyond relative abundance to precise measurements of both microbial communities and chemical compounds</li>
+            </ul>
+        </section>
+
+        <section id="impact">
+            <h2>Expected Impact</h2>
+            
+            <h3>Scientific Contributions</h3>
+            <ul>
+                <li><strong>First comprehensive mycobiome map:</strong> Revealing fungal associations across Central European invasion gradient</li>
+                <li><strong>Complete metabolomic profiles:</strong> Identifying chemical compounds underlying ragweed's competitive success</li>
+                <li><strong>Biocontrol potential:</strong> Discovering natural enemies or autotoxic compounds for sustainable management</li>
+                <li><strong>Methodological framework:</strong> Establishing standardized protocols for invasive species molecular ecology</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3>Project Coordinator</h3>
+                    <p><strong>Name:</strong> Tomasz Grzyb</p>
+                    <p><strong>Institution:</strong> Lodz University of Technology</p>
+                    <p><strong>Faculty:</strong> Biotechnology and Food Sciences</p>
+                    <p><strong>Department:</strong> Environmental Biotechnology</p>
+                    <p><strong>Email:</strong> tomasz.grzyb@dokt.p.lodz.pl</p>
+                    <p><strong>Phone:</strong> +48 512 045 044</p>
+                    <p><strong>Address:</strong> Stefana Żeromskiego 116, 90-924 Łódź, Poland</p>
+                </div>
+                
+                <div>
+                    <h3>Follow Visegrad Fund</h3>
+                    <p>Stay connected with the Visegrad Fund community:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/visegradfund" target="_blank" title="Visegrad Fund Facebook">Facebook</a>
+                        <a href="https://twitter.com/visegradfund" target="_blank" title="Visegrad Fund Twitter">Twitter</a>
+                        <a href="https://www.instagram.com/visegradfund" target="_blank" title="Visegrad Fund Instagram">Instagram</a>
+                    </div>
+                    <p><strong>Department Website:</strong> <a href="https://kbs.p.lodz.pl/" target="_blank">kbs.p.lodz.pl</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ragweed Invasion Research Project. Funded by the Visegrad Fund.</p>
+            <div class="footer-links">
+                <a href="https://www.visegradfund.org" target="_blank">Visegrad Fund Official Website</a>
+                <a href="https://www.facebook.com/visegradfund" target="_blank">VF Facebook</a>
+                <a href="https://twitter.com/visegradfund" target="_blank">VF Twitter</a>
+                <a href="https://www.instagram.com/visegradfund" target="_blank">VF Instagram</a>
+            </div>
+            
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                This project (#22520039) is supported by the Visegrad Fund. The opinions expressed are those of the authors and do not necessarily reflect the views of the Visegrad Fund. Research conducted in compliance with environmental protection principles and the "Do No Significant Harm" principle.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(lang) {
+            const translations = {
+                'en': {
+                    'main-title': 'Searching for Ways to Understand and Reduce the Ragweed Invasion in the V4+ Region',
+                    'subtitle': 'Molecular insights into Ambrosia artemisiifolia invasiveness across Central Europe'
+                },
+                'pl': {
+                    'main-title': 'Poszukiwanie sposobów zrozumienia i ograniczenia inwazji ambrozji w regionie V4+',
+                    'subtitle': 'Molekularne podstawy inwazyjności Ambrosia artemisiifolia w Europie Środkowej'
+                }
+            };
+            
+            if (translations[lang]) {
+                document.getElementById('main-title').textContent = translations[lang]['main-title'];
+                document.getElementById('subtitle').textContent = translations[lang]['subtitle'];
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactivity for partner cards
+        document.querySelectorAll('.partner-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderLeftWidth = '6px';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.borderLeftWidth = '4px';
+            });
+        });
+    </script>
+</body>
+</html>
