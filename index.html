@@ -233,20 +233,6 @@
             text-decoration: underline;
         }
         
-        .language-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        
-        .language-switch select {
-            padding: 0.5rem;
-            border: none;
-            border-radius: 4px;
-            background: white;
-            color: #2c3e50;
-        }
-        
         .highlight-box {
             background: #e8f5e8;
             border: 2px solid #27ae60;
@@ -285,17 +271,10 @@
 </head>
 <body>
     <header>
-        <div class="language-switch">
-            <select onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="pl">Polski</option>
-            </select>
-        </div>
-        
         <div class="container">
             <div class="header-content">
-                <h1 id="main-title">Searching for Ways to Understand and Reduce the Ragweed Invasion in the V4+ Region</h1>
-                <p id="subtitle">Molecular insights into Ambrosia artemisiifolia invasiveness across Central Europe</p>
+                <h1>Searching for Ways to Understand and Reduce the Ragweed Invasion in the V4+ Region</h1>
+                <p>Molecular insights into Ambrosia artemisiifolia invasiveness across Central Europe</p>
                 
                 <div class="visegrad-logo">
                     <a href="https://www.visegradfund.org" target="_blank">
@@ -368,28 +347,28 @@
                 <div class="partner-card">
                     <h3>Lodz University of Technology</h3>
                     <div class="country">Poland - Lead Partner</div>
-                    <p> Department of Environmental Biotechnology, Faculty of Biotechnology and Food Sciences</p>
+                    <p>Department of Environmental Biotechnology, Faculty of Biotechnology and Food Sciences</p>
                     <a href="https://www.p.lodz.pl/" class="partner-link" target="_blank">Visit University</a>
                 </div>
                 
                 <div class="partner-card">
                     <h3>Comenius University in Bratislava</h3>
                     <div class="country">Slovakia</div>
-                    <p> Department of Botany, Faculty of Natural Sciences</p>
+                    <p>Department of Botany, Faculty of Natural Sciences</p>
                     <a href="https://uniba.sk/" class="partner-link" target="_blank">Visit University</a>
                 </div>
                 
                 <div class="partner-card">
                     <h3>Hungarian University of Agriculture and Life Sciences</h3>
                     <div class="country">Hungary</div>
-                    <p> Department of Agronomy, Institute of Crop Production Sciences</p>
+                    <p>Department of Agronomy, Institute of Crop Production Sciences</p>
                     <a href="https://www.uni-mate.hu/" class="partner-link" target="_blank">Visit University</a>
                 </div>
                 
                 <div class="partner-card">
                     <h3>University of Sarajevo</h3>
                     <div class="country">Bosnia and Herzegovina</div>
-                    <p> Faculty of Agriculture and Food Sciences</p>
+                    <p>Faculty of Agriculture and Food Sciences</p>
                     <a href="https://www.unsa.ba/" class="partner-link" target="_blank">Visit University</a>
                 </div>
             </div>
@@ -420,14 +399,7 @@
                 </div>
             </div>
 
-            <h3>Innovation Elements</h3>
-            <p>This project pioneers "invasive biotechnology" - a systematic approach to understanding invasion mechanisms at the molecular level. Key innovations include:</p>
-            <ul>
-                <li><strong>Comprehensive mycobiome analysis:</strong> First study to examine ragweed's complete fungal community using modern molecular techniques</li>
-                <li><strong>Invasion gradient approach:</strong> Sampling from both epicenter and expanding frontiers reveals universal vs. location-specific patterns</li>
-                <li><strong>Integrated chemical ecology:</strong> Combining metabolomics with biological activity testing to identify specific compounds responsible for competitive advantage</li>
-                <li><strong>Absolute quantification:</strong> Moving beyond relative abundance to precise measurements of both microbial communities and chemical compounds</li>
-            </ul>
+            <p>This project pioneers "invasive biotechnology" - a systematic approach to understanding invasion mechanisms at the molecular level.</p>
         </section>
 
         <section id="impact">
@@ -487,24 +459,6 @@
     </footer>
 
     <script>
-        function changeLanguage(lang) {
-            const translations = {
-                'en': {
-                    'main-title': 'Searching for Ways to Understand and Reduce the Ragweed Invasion in the V4+ Region',
-                    'subtitle': 'Molecular insights into Ambrosia artemisiifolia invasiveness across Central Europe'
-                },
-                'pl': {
-                    'main-title': 'Poszukiwanie sposobów zrozumienia i ograniczenia inwazji ambrozji w regionie V4+',
-                    'subtitle': 'Molekularne podstawy inwazyjności Ambrosia artemisiifolia w Europie Środkowej'
-                }
-            };
-            
-            if (translations[lang]) {
-                document.getElementById('main-title').textContent = translations[lang]['main-title'];
-                document.getElementById('subtitle').textContent = translations[lang]['subtitle'];
-            }
-        }
-        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
